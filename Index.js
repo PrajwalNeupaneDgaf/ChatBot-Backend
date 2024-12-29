@@ -28,7 +28,12 @@ const connectDB = async () => {
 // app.use(express.urlencoded({ extended: true }));
 
 
-app.use(cors())
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://askhomeworkai.netlify.app'],
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
 
 
 app.listen(process.env.PORT , ()=>{
